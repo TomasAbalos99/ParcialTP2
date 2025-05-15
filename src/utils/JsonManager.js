@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { config } from "../config/config.js"; // ACÁ VA LA RUTA AL CONFIG!!!!!
+import { config } from "../../config/config.js";
 
 const { DB_PATH } = config;
 

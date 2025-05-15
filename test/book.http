@@ -1,0 +1,42 @@
+
+# Obtener todos los libros del json que esta en /db
+GET http://127.0.0.1:3003/api/book 
+###
+
+
+
+
+#Crear libro
+POST http://localhost:3003/api/book
+Content-Type: application/json
+
+{
+  "title": "Rayuela",
+  "author": "Julio Cortázar",
+  "isbn": "978-950-07-0000-0",
+  "publishedDate": "1963-06-28",
+  "availableCopies": 5
+}
+
+###
+
+#Get libro por id
+GET http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+###
+
+#Actualizar datos de un libro con ese id
+PUT http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+Content-Type: application/json
+
+{
+  "title": "Cien años de soledad (Edición actualizada)",
+  "author": "Gabriel García Márquez",
+  "isbn": "978-3-16-148410-0",
+  "publishedDate": "1967-06-05",
+  "availableCopies": 6
+}
+###
+
+#Borrar libro por id
+DELETE http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+Content-Type: application/json

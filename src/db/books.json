@@ -1,0 +1,50 @@
+[
+	{
+		"id": "a1e23456-1234-4a5b-b678-abc123def456",
+		"title": "El túnel",
+		"author": "Ernesto Sabato",
+		"isbn": "978-950-07-1234-5",
+		"publishedDate": "1948-11-01",
+		"availableCopies": 3
+	},
+	{
+		"id": "b2f34567-5678-4c9d-c789-def456ghi789",
+		"title": "Rayuela",
+		"author": "Julio Cortázar",
+		"isbn": "978-987-566-4321-0",
+		"publishedDate": "1963-06-28",
+		"availableCopies": 5
+	},
+	{
+		"id": "c3g45678-9012-4e7f-d890-ghi789jkl012",
+		"title": "Don Quijote de la Mancha",
+		"author": "Miguel de Cervantes",
+		"isbn": "978-84-376-0494-7",
+		"publishedDate": "1605-01-16",
+		"availableCopies": 2
+	},
+	{
+		"id": "d4h56789-3456-4f1g-e901-jkl012mno345",
+		"title": "La sombra del viento",
+		"author": "Carlos Ruiz Zafón",
+		"isbn": "978-84-08-03796-9",
+		"publishedDate": "2001-04-12",
+		"availableCopies": 4
+	},
+	{
+		"id": "e5i67890-6789-4g2h-f012-mno345pqr678",
+		"title": "Ficciones",
+		"author": "Jorge Luis Borges",
+		"isbn": "978-950-04-0407-5",
+		"publishedDate": "1944-01-01",
+		"availableCopies": 6
+	},
+	{
+		"id": "f6j78901-0123-4h3i-g123-pqr678stu901",
+		"title": "Pedro Páramo",
+		"author": "Juan Rulfo",
+		"isbn": "978-968-16-3926-8",
+		"publishedDate": "1955-03-19",
+		"availableCopies": 1
+	}
+]
