@@ -9,9 +9,10 @@ export const BookController = {
 			});
 		}
 		res.json(libros);
+		return
 	},
 	crearLibro:async(req,res)=>{
-     const  {libro}  = req.body;
+     const  libro  = req.body;
 		try {
 			const libroResponse = await BookService.servicioCreacion(libro);
 			res.status(200).json({
@@ -26,5 +27,39 @@ export const BookController = {
 			return;
 		}
 
-    }
-};
+    },
+
+	getLibro:async(req,res)=>{
+		const {id} = req.params;
+		const libro = await BookService.servicioBusquedaIndividual(id);
+		if (!libro) {
+			res.status(404).json({
+				payload: null,
+				message: "No Libro",
+				ok: false,
+			});
+			return;
+		}
+
+		res.status(200).json({
+			message: "Success",
+			ok: true,
+		});
+		return;
+	},
+	deleteLibro:async(req,res)=>{
+		const {id} = req.params
+		const libro = await BookService.servicioDeleteLibro(id);
+		if (!libro) {
+			res.status(404).json({
+				payload: null,
+				message: "No se pudo borrar el Libro",
+				ok: false,
+			})
+	} else res.json({
+		message:"Libro borrado"
+	})
+},
+
+
+}

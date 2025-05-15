@@ -17,5 +17,17 @@ export const BookService = {
 
 		BookRepository.crear(libroModelo);
 		return modelLibro;
+	},
+	servicioBusquedaIndividual:(id)=>{
+		const idBuscada = BookRepository.getById(id);
+		if(!idBuscada) return null;
+		return idBuscada;
+
+	},
+	servicioDeleteLibro:(id)=>{
+		const libro = BookRepository.deletedById(id);
+		if(!libro) return null;
+		return libro;
+
 	}
 };
