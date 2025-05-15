@@ -11,8 +11,8 @@ POST http://localhost:3003/api/book
 Content-Type: application/json
 
 {
-  "title": "Rayuela",
-  "author": "Julio Cortázar",
+  "title": "Dragon Ball Z",
+  "author": "Akira Toriyama",
   "isbn": "978-950-07-0000-0",
   "publishedDate": "1963-06-28",
   "availableCopies": 5
@@ -25,12 +25,12 @@ GET http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
 ###
 
 #Actualizar datos de un libro con ese id
-PUT http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+PUT http://localhost:3003/api/book/a1e23456-1234-4a5b-b678-abc123def456
 Content-Type: application/json
 
 {
   "title": "Cien años de soledad (Edición actualizada)",
-  "author": "Gabriel García Márquez",
+  "author": "LIONEL MESSI (Cambiado)",
   "isbn": "978-3-16-148410-0",
   "publishedDate": "1967-06-05",
   "availableCopies": 6
@@ -38,5 +38,5 @@ Content-Type: application/json
 ###
 
 #Borrar libro por id
-DELETE http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+DELETE http://localhost:3003/api/book/1efa83c9-aa4b-4b97-8038-c1bccd76c372
 Content-Type: application/json

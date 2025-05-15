@@ -9,8 +9,9 @@ export const JsonHandler = {
 			const data = await fs.readFile(DB_PATH, { encoding: "utf8" });
 			return JSON.parse(data || []);
 		} catch (error) {
-			(error) => console.log({ error });
-		}
+  console.log({ error });
+  return []; 
+}
 	},
 
 	async write(data) {

@@ -22,8 +22,10 @@ export const BookController = {
 		} catch (e) {
 			console.log({ message: e.message, message: "algo salio mal" });
 			res.status(404).json({
-				message: "No se pudo crear el libro",			
+				message: "No se pudo crear el libro",	
+				
 			});
+			console.log(e);
 			return;
 		}
 
@@ -60,6 +62,28 @@ export const BookController = {
 		message:"Libro borrado"
 	})
 },
+	actualizarLibro:async(req,res)=>{
+		try {
+		const body = req.body;
+		const { id } = req.params; // ✅ corregido: era res.params (incorrecto)
 
+		const libroActualizado = await BookService.servicioActualizacion(body, id);
 
+		if (!libroActualizado) {
+			return res.status(404).json({ message: "Libro no encontrado o no se pudo actualizar." });
+		}
+
+		res.status(200).json(libroActualizado);
+	} catch (error) {
+		console.error("Error al actualizar el libro:", error);
+		res.status(500).json({ message: "Error interno del servidor." });
+		console.log(error);
+	}
 }
+
+
+     
+}
+
+
+

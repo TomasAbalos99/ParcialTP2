@@ -23,17 +23,24 @@ export const BookRepository = {
 		return libro;
 	},
 	deletedById:async(id)=>{
-		const libros = JsonHandler.read();
+		const libros = await JsonHandler.read();
 		if(!libros) return null;
 		const libro = libros.find(libro => libro.id ===id);
 		if(!libro)return null;
 
 		const libroResponse = libros.filter((libro) => libro.id !== id);
 		try {
-			await JsonHandler.write(ticketsResponse);
+			await JsonHandler.write(libroResponse);
 			return id;
 		} catch (e) {
 			return null;
 		}
+	},
+	actualizarLibro:async(libroActualizado)=>{
+	const libros = await JsonHandler.read();
+	if(!libros) return null;
+	const libroResponse = libros.filter((libro) => libro.id !== libroActualizado.id);
+	libroResponse.push(libroActualizado);
+	await	JsonHandler.write(libroResponse);
 	}
 };

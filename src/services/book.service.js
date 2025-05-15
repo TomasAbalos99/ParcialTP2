@@ -10,13 +10,13 @@ export const BookService = {
 
 		const libroModelo = new Book(
 			 crypto.randomUUID().toString(),
- 			 libro.autor,
- 			 libro.titulo,
+ 			 libro.author,
+ 			 libro.title,
   
 				);
 
 		BookRepository.crear(libroModelo);
-		return modelLibro;
+		return libroModelo;
 	},
 	servicioBusquedaIndividual:(id)=>{
 		const idBuscada = BookRepository.getById(id);
@@ -29,5 +29,18 @@ export const BookService = {
 		if(!libro) return null;
 		return libro;
 
+	},
+	servicioActualizacion:async(body,id)=>{
+		const existe = await BookRepository.getById(id);
+		if(!existe) return null;
+		const libro = {
+			...existe,
+			id: id,
+			author: body.author,
+			title: body.title,
+			
+		}
+		await BookRepository.actualizarLibro(libro);
+		return libro;
 	}
 };
